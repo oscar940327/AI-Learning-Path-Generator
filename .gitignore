@@ -1,0 +1,12 @@
+# 環境變數與金鑰
+.env
+
+# Python 快取與虛擬環境
+__pycache__/
+*.pyc
+venv/
+env/
+.venv/
+
+# Streamlit 快取
+.streamlit/

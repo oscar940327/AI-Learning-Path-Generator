@@ -1,0 +1,6 @@
+streamlit
+networkx
+openai
+python-dotenv
+numpy
+pydantic
