@@ -18,13 +18,13 @@ AI-Learning-Path-Generator 是一個 AI 驅動的學習工具，能針對任意�
 - **Interactive Topology Visualization**: Renders Mermaid SVG inside Streamlit with pan/zoom support via `svg-pan-zoom`.
 - **互動式拓樸視覺化**：在 Streamlit 中渲染 Mermaid 圖並整合 `svg-pan-zoom`，支援拖曳與縮放。
 
-## 🛠 Tech Stack / 技術棧
+## Tech Stack / 技術棧
 
 - **Backend & Logic / 後端與邏輯**: Python 3, NetworkX, Pydantic, NumPy
 - **AI & Search / AI 與檢索**: OpenAI API (Chat + Embeddings), YouTube Data API v3
 - **Frontend / 前端**: Streamlit, Mermaid.js, svg-pan-zoom
 
-## ⚙️ Installation & Setup / 安裝與設定
+## Installation & Setup / 安裝與設定
 
 ### 1) Clone Repository / 下載專案
 
