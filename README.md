@@ -39,7 +39,7 @@ It is recommended to use a virtual environment.
 建議先建立並啟用虛擬環境。
 
 ```bash
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ### 3) Environment Variables / 設定環境變數
