@@ -86,7 +86,7 @@ Then open `http://localhost:8501` in your browser.
    - Fetches top candidates from YouTube and reranks them by semantic similarity.
    - 從 YouTube 取得候選影片後，依語意相似度重排序。
 
-## 📌 Notes / 備註
+## Notes / 備註
 
 - This project depends on external APIs (OpenAI, YouTube). Ensure keys are valid and quotas are available.
 - 本專案依賴外部 API（OpenAI、YouTube），請確認金鑰有效且配額可用。
