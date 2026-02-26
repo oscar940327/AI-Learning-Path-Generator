@@ -3,6 +3,40 @@ import networkx as nx
 import base64
 import streamlit.components.v1 as components
 
+# Streamlit 頁面設定
+st.set_page_config(page_title="Learning Path Generator", layout="wide")
+
+
+def password_entered():
+    app_password = st.secrets.get("APP_PASSWORD")
+    if app_password and st.session_state.get("password") == app_password:
+        st.session_state["password_correct"] = True
+        del st.session_state["password"]
+    else:
+        st.session_state["password_correct"] = False
+
+
+def check_password():
+    if "APP_PASSWORD" not in st.secrets:
+        st.error("Missing APP_PASSWORD. Please set APP_PASSWORD in .streamlit/secrets.toml.")
+        return False
+
+    if "password_correct" not in st.session_state:
+        st.text_input("Enter access password", type="password", on_change=password_entered, key="password")
+        return False
+
+    if not st.session_state["password_correct"]:
+        st.text_input("Enter access password", type="password", on_change=password_entered, key="password")
+        st.error("Incorrect password. Please try again.")
+        return False
+
+    return True
+
+
+if not check_password():
+    st.stop()
+
+
 from llm_engine import generate_learning_path
 from graph_builder import build_and_validate_graph
 from video_search import fetch_candidate_videos
@@ -64,8 +98,6 @@ def convert_nx_to_mermaid(G: nx.DiGraph) -> str:
     return mermaid_code
 
 # Streamlit 網頁介面建構
-
-st.set_page_config(page_title="Learning Path Generator", layout="wide")
 
 # 使用 session_state 確保重整畫面時資料不會遺失
 if "graph_data" not in st.session_state:
